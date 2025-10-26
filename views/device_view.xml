@@ -1,0 +1,71 @@
+<odoo>
+    <record id = 'device_view_list' model = 'ir.ui.view'>
+        <field name="name">device list</field>
+        <field name="model">device</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="model"/>
+                <field name="Purchase_Date"/>
+                <field name="notes"/>
+                <field name="employee"/>
+                <field name="department"/>
+                <field name="manufacturer"/>
+                <field name="vendor"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+    <record id = 'device_view_form' model = 'ir.ui.view'>
+        <field name="name">device form</field>
+        <field name="model">device</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="category"/>
+                            <field name="model"/>
+                            <field name="Purchase_Date"/>
+                            <field name="notes"/>
+                        </group>
+                        <group>
+                            <field name="employee"/>
+                            <field name="department"/>
+                            <field name="manufacturer"/>
+                            <field name="vendor"/>
+                            <field name="status"/>
+                        </group>
+                        <notebook>
+                            <page string="Specifications">
+                                <field name="specs_line_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="value"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id = 'device_action' model = 'ir.actions.act_window'>
+        <field name = 'name'>device action</field>
+        <field name= 'res_model'>device</field>
+    </record>
+
+    <menuitem
+        id = 'device_menu_item'
+        name = 'Device'
+        parent = 'it_assets'
+        action = 'device_action'
+    />
+</odoo>

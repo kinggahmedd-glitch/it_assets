@@ -1,0 +1,43 @@
+<odoo>
+    <record id="specs_view_list" model="ir.ui.view">
+        <field name="name">specs.list</field>
+        <field name="model">specs</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="value"/>
+                <field name="description"/>
+                <field name="device_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="specs_view_form" model="ir.ui.view">
+        <field name="name">specs.form</field>
+        <field name="model">specs</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="value"/>
+                        <field name="description"/>
+                        <field name="device_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id = 'specs_action' model = 'ir.actions.act_window'>
+        <field name = 'name'>specs.action</field>
+        <field name= 'res_model'>specs</field>
+    </record>
+
+    <menuitem
+        id = 'specs_menu_item'
+        name = 'Specs'
+        parent = 'it_assets'
+        action = 'specs_action'
+    />
+</odoo>

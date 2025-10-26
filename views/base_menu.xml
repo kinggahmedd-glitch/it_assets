@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem
+    id = 'it_assets'
+    name = 'IT Assets'
+    />
+    <menuitem
+    id = 'device'
+    name = 'Device'
+    parent = 'it_assets'
+    />
+</odoo>
