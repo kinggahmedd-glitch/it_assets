@@ -4,7 +4,8 @@ class Specs(models.Model):
     _name = "specs"
 
 
-    name = fields.Char(string="Specification Name", required=True)
-    value = fields.Char(string='Value')
-    description = fields.Text(string="Description")
-    device_id = fields.Many2one('device', string='Device', ondelete='cascade')
+    name = fields.Char(string='Name', ondelete='cascade')
+
+    _sql_constraints = [
+        ('unique_specs_name', 'unique(name)', 'Name must be unique!')
+    ]

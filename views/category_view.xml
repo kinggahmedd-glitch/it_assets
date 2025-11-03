@@ -5,7 +5,6 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="description"/>
             </list>
         </field>
     </record>
@@ -18,17 +17,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="description"/>
                     </group>
-                        <notebook>
-                            <page string="Devices">
-                                <field name="device_ids">
-                                    <list editable="bottom">
-                                        <field name="name"/>
-                                    </list>
-                                </field>
-                            </page>
-                        </notebook>
                 </sheet>
             </form>
         </field>
