@@ -31,13 +31,16 @@ class Device(models.Model):
         return super(Device, self).create(vals)
 
     def action_set_active(self):
-        self.status = 'active'
+        for rec in self:
+            rec.status = 'active'
 
     def action_set_in_maintenance(self):
-        self.status = 'in_maintenance'
+        for rec in self:
+            rec.status = 'in_maintenance'
 
-    def action_set_inactive(self):
-        self.status = 'in_active'
+    def action_set_in_active(self):
+        for rec in self:
+            rec.status = 'in_active'
 
 
 

@@ -33,8 +33,20 @@
             <form>
                 <sheet>
                     <header>
-                        <field name="status" widget="radio"/>
+                        <widget name="web_ribbon" title="In Maintenance"
+                                bg_color="text-bg-success"
+                                invisible="status != 'in_maintenance'"/>
+
+                        <button name="action_set_active" type="object" class="btn-primary"
+                                string="Active" invisible="status == 'active'"/>
+
+                        <button name="action_set_in_maintenance" type="object" class="btn-warning"
+                                string="In Maintenance" invisible="status == 'in_maintenance'"/>
+
+                        <button name="action_set_in_active" type="object" class="btn-secondary"
+                                string="Inactive" invisible="status == 'in_active'"/>
                     </header>
+
                     <group>
                         <group>
                             <field name="name"/>
